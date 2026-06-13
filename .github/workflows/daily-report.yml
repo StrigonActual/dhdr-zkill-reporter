@@ -1,23 +1,21 @@
-name: Test zKill API
+name: DHDR Daily Report
 
 on:
   workflow_dispatch:
 
 jobs:
-  test:
+  report:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: "3.12"
 
-      - name: Install requests
-        run: pip install requests
+      - run: pip install -r requirements.txt
 
-      - name: Run report.py
-        run: python report.py
+      - run: python report.py
+        env:
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
