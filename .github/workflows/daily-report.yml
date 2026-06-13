@@ -10,7 +10,6 @@ jobs:
 report:
 runs-on: ubuntu-latest
 
-```
 steps:
   - uses: actions/checkout@v4
 
@@ -23,4 +22,3 @@ steps:
   - run: python report.py
     env:
       WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
-```
