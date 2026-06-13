@@ -132,7 +132,7 @@ embed = {
         {"name": "ISK Destroyed", "value": format_isk(isk_destroyed), "inline": True},
         {"name": "ISK Lost", "value": format_isk(isk_lost), "inline": True},
     ],
-    "footer": {"text": "Death's Head Division • zKillboard"}
+    "footer": {"text": "Administrative Atrocities • zKillboard"}
 }
 
 if largest_kill:
