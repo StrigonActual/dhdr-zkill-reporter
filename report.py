@@ -11,4 +11,8 @@ data = r.json()
 
 print("Records:", len(data))
 
-print(json.dumps(data[0], indent=2)[:3000])
+print("\nFIELDS:")
+print(list(data[0].keys()))
+
+print("\nFIRST RECORD:")
+print(json.dumps(data[0], indent=2))
