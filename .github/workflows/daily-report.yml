@@ -1,4 +1,4 @@
-name: DHDR Daily Report
+name: Administrative Atrocities Daily Report
 
 on:
 workflow_dispatch:
