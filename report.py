@@ -1,26 +1,21 @@
 import requests
-import json
 
 zkill = requests.get(
     "https://zkillboard.com/api/kills/corporationID/98834399/"
 ).json()
 
+print("Records:", len(zkill))
+
 first = zkill[0]
+last = zkill[-1]
 
-killmail_id = first["killmail_id"]
-hash_value = first["zkb"]["hash"]
+for label, km in [("Newest", first), ("Oldest", last)]:
 
-print("Killmail ID:", killmail_id)
+    killmail_id = km["killmail_id"]
+    hash_value = km["zkb"]["hash"]
 
-esi_url = (
-    f"https://esi.evetech.net/latest/"
-    f"killmails/{killmail_id}/{hash_value}/"
-)
+    esi = requests.get(
+        f"https://esi.evetech.net/latest/killmails/{killmail_id}/{hash_value}/"
+    ).json()
 
-esi = requests.get(esi_url)
-
-print("ESI Status:", esi.status_code)
-
-data = esi.json()
-
-print(json.dumps(data, indent=2)[:4000])
+    print(label, esi["killmail_time"])
