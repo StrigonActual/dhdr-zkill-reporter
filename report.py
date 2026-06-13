@@ -1,20 +1,26 @@
 import requests
 import json
 
-url = "https://zkillboard.com/api/kills/corporationID/98834399/page/1/"
+zkill = requests.get(
+    "https://zkillboard.com/api/kills/corporationID/98834399/"
+).json()
 
-r = requests.get(
-    url,
-    headers={
-        "User-Agent": "DHDR Discord Bot"
-    }
+first = zkill[0]
+
+killmail_id = first["killmail_id"]
+hash_value = first["zkb"]["hash"]
+
+print("Killmail ID:", killmail_id)
+
+esi_url = (
+    f"https://esi.evetech.net/latest/"
+    f"killmails/{killmail_id}/{hash_value}/"
 )
 
-print("Status:", r.status_code)
+esi = requests.get(esi_url)
 
-data = r.json()
+print("ESI Status:", esi.status_code)
 
-print("Records:", len(data))
+data = esi.json()
 
-if len(data) > 0:
-    print(json.dumps(data[0], indent=2))
+print(json.dumps(data, indent=2)[:4000])
