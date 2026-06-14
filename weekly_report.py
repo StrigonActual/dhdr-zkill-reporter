@@ -113,11 +113,11 @@ top_finals = "\n".join(
 )
 
 embed = {
-    "title": "🏆 DHDR Weekly Leaderboard",
+    "title": "🏆 Administrative Atrocities Weekly Leaderboard",
     "description": "Last 7 Days",
     "fields": [
         {
-            "name": "Top Participation",
+            "name": "Top Kills",
             "value": top_participation or "No data",
             "inline": False,
         },
