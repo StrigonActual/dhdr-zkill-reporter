@@ -122,7 +122,7 @@ for kill in kills:
             final_blows[char_id] += 1
 
 embed = {
-    "title": "☠️ DHDR Daily PvP Report",
+    "title": "☠️ Administrative Atrocities Daily One-Pager",
     "description": "Last 24 Hours",
     "thumbnail": {"url": CORP_LOGO},
     "fields": [
@@ -150,7 +150,7 @@ if largest_kill:
 if largest_loss:
     victim = largest_loss["detail"]["victim"]
     embed["fields"].append({
-        "name": "💀 Biggest Loss",
+        "name": "💀 Biggest Loser",
         "value": (
             f"{ship_names.get(victim.get('ship_type_id'),'Unknown Ship')}\n"
             f"Pilot: {character_names.get(victim.get('character_id'),'Unknown Pilot')}\n"
@@ -171,7 +171,7 @@ if participation:
     cid, count = participation.most_common(1)[0]
     embed["fields"].append({
         "name": "⚔ Most Active Pilot",
-        "value": f"{character_names.get(cid,'Unknown')}\n{count} participations",
+        "value": f"{character_names.get(cid,'Unknown')}\n{count} kills",
         "inline": False
     })
 
