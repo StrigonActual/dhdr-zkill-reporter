@@ -162,7 +162,7 @@ if largest_loss:
 if final_blows:
     cid, count = final_blows.most_common(1)[0]
     embed["fields"].append({
-        "name": "🔥 Top Final Blow",
+        "name": "🔥 Top Final Blows",
         "value": f"{character_names.get(cid,'Unknown')}\n{count} final blows",
         "inline": False
     })
