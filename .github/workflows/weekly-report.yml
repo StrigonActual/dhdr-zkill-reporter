@@ -1,10 +1,10 @@
-name: DHDR Weekly Report
+name: Administrative Atrocities Weekly Report
 
 on:
   workflow_dispatch:
 
   schedule:
-    - cron: '10 0 * * 0'
+    - cron: '1 23 * * 0'
 
 jobs:
   report:
