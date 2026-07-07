@@ -5,7 +5,7 @@ from collections import Counter
 
 CORP_ID = 98834399
 WEBHOOK_URL = os.environ["WEBHOOK_URL"]
-HEADERS = {"User-Agent": "DHDR Weekly Report Bot"}
+HEADERS = {"User-Agent": "FOSFO Weekly Report Bot"}
 
 
 def get_zkill(endpoint):
@@ -113,7 +113,7 @@ top_finals = "\n".join(
 )
 
 embed = {
-    "title": "🏆 Administrative Atrocities Weekly Leaderboard",
+    "title": "🏆 The Ministry of Ungentlemanly Warfare Weekly Leaderboard",
     "description": "Last 7 Days",
     "fields": [
         {
