@@ -6,7 +6,7 @@ from collections import Counter
 CORP_ID = 98834399
 WEBHOOK_URL = os.environ["WEBHOOK_URL"]
 
-HEADERS = {"User-Agent": "DHDR Daily Report Bot"}
+HEADERS = {"User-Agent": "FOSFO Daily Report Bot"}
 CORP_LOGO = f"https://images.evetech.net/corporations/{CORP_ID}/logo"
 
 
@@ -122,7 +122,7 @@ for kill in kills:
             final_blows[char_id] += 1
 
 embed = {
-    "title": "☠️ Administrative Atrocities Daily One-Pager",
+    "title": "☠️ The Ministry of Ungentlemanly Warfare Daily One-Pager",
     "description": "Last 24 Hours",
     "thumbnail": {"url": CORP_LOGO},
     "fields": [
@@ -132,7 +132,7 @@ embed = {
         {"name": "ISK Destroyed", "value": format_isk(isk_destroyed), "inline": True},
         {"name": "ISK Lost", "value": format_isk(isk_lost), "inline": True},
     ],
-    "footer": {"text": "Administrative Atrocities • zKillboard"}
+    "footer": {"text": "The Ministry of Ungentlemanly Warfare • zKillboard"}
 }
 
 if largest_kill:
@@ -177,7 +177,7 @@ if participation:
 
 embed["fields"].append({
     "name": "📈 zKillboard",
-    "value": "https://zkillboard.com/corporation/98834399/",
+    "value": "https://zkillboard.com/corporation/98838034/",
     "inline": False
 })
 
