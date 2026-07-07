@@ -3,7 +3,7 @@ import requests
 from datetime import datetime, timedelta, timezone
 from collections import Counter
 
-CORP_ID = 98834399
+CORP_ID = 99011978
 WEBHOOK_URL = os.environ["WEBHOOK_URL"]
 
 HEADERS = {"User-Agent": "FOSFO Daily Report Bot"}
